@@ -1,0 +1,98 @@
+[ASM]
+AALTCAAP2810.srv.allianz ansible_connection=ssh ansible_user=ksfp  ansible_ssh_pass=Redmi2021 ansible_become=yes ansible_become_method=sudo 
+[SYS]
+AALTCAAP2810.srv.allianz
+
+[UAT]
+
+AALTCUAP2810.srv.allianz
+AALTCUAP2811.srv.allianz
+AALTCUAP2812.srv.allianz
+AALTCUAP2813.srv.allianz
+AALTCUAP2814.srv.allianz
+AALTCUAP2815.srv.allianz
+AALTCUAP2816.srv.allianz
+AALTCUAP2817.srv.allianz
+
+
+[UAT:vars]
+
+ansible_connection=ssh 
+ansible_user=ksfp  
+ansible_ssh_pass=Redmi2021
+
+[UAT-CMO]
+
+aaltcupdc011a.corp.aal.au
+aaltcupdc011b.corp.aal.au
+aaltcupdc011c.corp.aal.au
+aaltcupdc011d.corp.aal.au
+aaltcupdc012a.corp.aal.au
+aaltcupdc012b.corp.aal.au
+aaltcupdc012c.corp.aal.au
+aaltcupdc012d.corp.aal.au
+
+
+
+[UAT-CMO:vars]
+ansible_connection=ssh 
+ansible_user=ksfp  
+ansible_ssh_pass=Redmi2021
+
+
+[local]
+127.0.0.1   ansible_connection=local
+
+
+
+
+[DR]
+AALTCPAP3810.srv.allianz  node1=AALTCPAP2810.srv.allianz
+AALTCPAP3811.srv.allianz  node1=AALTCPAP2811.srv.allianz
+AALTCPAP3812.srv.allianz  node1=AALTCPAP2812.srv.allianz
+AALTCPAP3813.srv.allianz  node1=AALTCPAP2813.srv.allianz
+AALTCPAP3814.srv.allianz  node1=AALTCPAP2814.srv.allianz
+AALTCPAP3815.srv.allianz  node1=AALTCPAP2815.srv.allianz
+AALTCPAP3816.srv.allianz  node1=AALTCPAP2816.srv.allianz
+AALTCPAP3817.srv.allianz  node1=AALTCPAP2817.srv.allianz
+
+[DR:vars]
+ansible_connection=ssh 
+ansible_user=ksfp  
+ansible_ssh_pass=Redmi2021
+
+[DR-CMO]
+aaltcpwph011a.corp.aal.au
+aaltcpwph011b.corp.aal.au
+aaltcpwph011c.corp.aal.au
+aaltcpwph011d.corp.aal.au
+aaltcpwph012a.corp.aal.au
+aaltcpwph012b.corp.aal.au
+aaltcpwph012c.corp.aal.au
+aaltcpwph012d.corp.aal.au
+
+[DR-CMO:vars]
+ansible_connection=ssh 
+ansible_user=ksfp  
+ansible_ssh_pass=Redmi2021
+
+[PRD]
+AALTCPAP2810.srv.allianz
+AALTCPAP2811.srv.allianz
+AALTCPAP2812.srv.allianz
+AALTCPAP2813.srv.allianz
+AALTCPAP2814.srv.allianz
+AALTCPAP2815.srv.allianz
+AALTCPAP2816.srv.allianz
+AALTCPAP2817.srv.allianz
+
+
+[PRD:vars]
+ansible_connection=ssh 
+ansible_user=ksfp  
+ansible_ssh_pass=Redmi2021
+
+
+
+
+
