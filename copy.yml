@@ -1,0 +1,16 @@
+---
+- hosts: ASM
+  tasks:
+  - name: Creating directory
+    file:
+      path: /tmp/software
+      state: directory
+  - name: Copying files
+    copy:
+      src:  /tmp/todelete/
+      dest: /tmp/software/
+  - name: Verifying files
+    shell: ls -ltr 
+    args: 
+      chdir: /tmp/software/
+      executable: /bin/bash

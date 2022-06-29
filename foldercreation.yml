@@ -1,0 +1,10 @@
+---
+- hosts: UAT-CMO
+  tasks:
+  - name: ansible folder creation on remote.
+    file:
+      path: /tmp/alfresco_binaries
+      state: directory
+      mode: 0777 
+      
+    

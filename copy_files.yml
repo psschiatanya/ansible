@@ -1,0 +1,10 @@
+---
+- hosts: UAT
+  tasks:
+  - name: ansible to copy files from source to destination.
+    copy:
+      src:  /tmp/playbooks/gop/todelete/alfresco/
+      dest: /tmp/alfresco_binaries
+      
+      
+    

@@ -1,0 +1,10 @@
+---
+- hosts: UAT-CMO
+  tasks:
+  - name: go to particular directory
+    shell: (cd /tmp/alfresco_binaries; find . -maxdepth 1 -type f) | cut -d'/' -f2
+    register: files_to_copy
+
+  - name: use fetch to get the files
+    fetch: src=/tmp/alfresco_binaries/{{ item }} dest=/tmp/playbooks/gop/todelete/
+    with_items: "{{ files_to_copy.stdout_lines }}"

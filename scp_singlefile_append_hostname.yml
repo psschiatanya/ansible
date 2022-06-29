@@ -1,0 +1,9 @@
+---
+- hosts: ASM
+  tasks:
+  - name: ansible copy file from remote to local.
+    fetch:
+      src: /tmp/catalina.out
+      dest: /tmp/playbooks/gop/todelete
+      
+    
