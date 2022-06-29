@@ -1,0 +1,21 @@
+$ ansible ASM -i hosts -m ping
+AALTCAAP2810.srv.allianz | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+
+
+ansible ASM -i hosts -m file -a "path=/tmp/files/binaries state=directory mode=0755"
+
+
+
+## Becoming a sudo su - user 
+
+ansible ASM -i hosts -m file -a "path=/tmp/files/binaries state=directory mode=0755" -b --become-user=tomcat
+
+export BECOMEPASS=Redmi2021
+sshpass -p $BECOMEPASS ansible ASM -i hosts -m file -a "path=/tmp/files/binaries state=directory mode=0755" -b --become-user=tomcat --extra-vars "ansible_become_pass=$BECOMEPASS"
+

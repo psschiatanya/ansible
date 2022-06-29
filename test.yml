@@ -1,0 +1,18 @@
+---
+- hosts: UAT
+  gather_facts: no
+  tasks:
+
+  
+  - name: ansible to copy script from source to destination -1.   
+    copy:
+      src:  /tmp/playbooks/gop/todelete/alfresco/env-stage3/{{item}}
+      dest: /tmp/alfresco_binaries/env-stage3
+    
+    with_items:
+      ['Alfresco-ent62-AllianzAustraliaServicesPtyLtd-Expires08.31.2021.lic']
+      
+
+  
+  
+  
